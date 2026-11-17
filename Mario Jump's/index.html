@@ -2,17 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Jump's</title>
+    <title>Mario Jump</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./JS/script.js" defer></script>
 </head>
 <body>
-    <div class="game-board">
-        <img src="./Images/pipe.png" class="pipe">
-        <img src="./Images/mario.gif" class="mario" alt="">
-        <img src="./Images/clouds.png" class="clouds" alt="">
-    </div>
+    <main class="game-board" aria-label="Jogo Mario Jump" tabindex="0">
+        <header class="hud" aria-label="Informações da partida">
+            <p>Vidas <span id="lives">3</span></p><p>Moedas <span id="coins">0</span></p><p>Pontos <span id="score">0</span></p>
+        </header>
+        <img src="./Images/pipe.png" class="pipe" alt="Cano">
+        <div class="coin" aria-label="Moeda"></div>
+        <img src="./Images/mario.gif" class="mario" alt="Mario">
+        <img src="./Images/clouds.png" class="clouds" alt="" aria-hidden="true">
+        <section class="screen start-screen" id="startScreen">
+            <h1>Mario Jump</h1><p>Pule os canos, colete moedas e sobreviva ao ritmo crescente.</p>
+            <p class="hint">Use Espaço, ↑ ou W para pular.</p><button type="button" id="startButton">Começar</button>
+        </section>
+        <section class="screen game-over-screen hidden" id="gameOverScreen" aria-live="polite">
+            <h2>Fim de jogo</h2><p>Pontuação final: <strong id="finalScore">0</strong></p><p>Moedas coletadas: <strong id="finalCoins">0</strong></p>
+            <button type="button" id="restartButton">Jogar novamente</button><p class="hint">Ou pressione R.</p>
+        </section>
+    </main>
 </body>
 </html>
